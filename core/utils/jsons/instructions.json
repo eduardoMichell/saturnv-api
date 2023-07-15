@@ -1,0 +1,281 @@
+{
+  "lui": {
+    "opcode": "0110111",
+    "funct7": "0000000",
+    "format": "U"
+  },
+  "auipc": {
+    "opcode": "0010111",
+    "funct7": "0000000",
+    "format": "U"
+  },
+  "jal": {
+    "opcode": "1101111",
+    "funct7": "0000000",
+    "format": "J"
+  },
+  "jalr":{
+    "opcode": "1100111",
+    "funct3": "000",
+    "funct7": "0000000",
+    "format": "I"
+  },
+  "beq":{
+    "opcode": "1100011",
+    "funct3": "000",
+    "funct7": "0000000",
+    "format": "B"
+  },
+  "bne":{
+    "opcode": "1100011",
+    "funct3": "001",
+    "funct7": "0000000",
+    "format": "B"
+  },
+  "blt":{
+    "opcode": "1100011",
+    "funct3": "100",
+    "funct7": "0000000",
+    "format": "B"
+  },
+  "bge":{
+    "opcode": "1100011",
+    "funct3": "101",
+    "funct7": "0000000",
+    "format": "B"
+  },
+  "bltu":{
+    "opcode": "1100011",
+    "funct3": "110",
+    "funct7": "0000000",
+    "format": "B"
+  },
+  "bgeu":{
+    "opcode": "1100011",
+    "funct3": "111",
+    "funct7": "0000000",
+    "format": "B"
+  },
+  "lb":{
+    "opcode": "0000011",
+    "funct3": "000",
+    "funct7": "0000000",
+    "format": "I"
+  },
+  "lh":{
+    "opcode": "0000011",
+    "funct3": "001",
+    "funct7": "0000000",
+    "format": "I"
+  },
+  "lw":{
+    "opcode": "0000011",
+    "funct3": "010",
+    "funct7": "0000000",
+    "format": "I"
+  },
+  "lbu":{
+    "opcode": "0000011",
+    "funct3": "100",
+    "funct7": "0000000",
+    "format": "I"
+  },
+  "lhu":{
+    "opcode": "0000011",
+    "funct3": "101",
+    "funct7": "0000000",
+    "format": "I"
+  },
+  "sb":{
+    "opcode": "0100011",
+    "funct3": "000",
+    "funct7": "0000000",
+    "format": "S"
+  },
+  "sh":{
+    "opcode": "0100011",
+    "funct3": "001",
+    "funct7": "0000000",
+    "format": "S"
+  },
+  "sw":{
+    "opcode": "0100011",
+    "funct3": "010",
+    "funct7": "0000000",
+    "format": "S"
+  },
+  "addi":{
+    "opcode": "0010011",
+    "funct3": "000",
+    "funct7": "0000000",
+    "format": "I"
+  },
+  "slti":{
+    "opcode": "0010011",
+    "funct3": "010",
+    "funct7": "0000000",
+    "format": "I"
+  },
+  "sltiu":{
+    "opcode": "0010011",
+    "funct3": "011",
+    "funct7": "0000000",
+    "format": "I"
+  },
+  "xori":{
+    "opcode": "0010011",
+    "funct3": "100",
+    "funct7": "0000000",
+    "format": "I"
+  },
+  "ori":{
+    "opcode": "0010011",
+    "funct3": "110",
+    "funct7": "0000000",
+    "format": "I"
+  },
+  "andi":{
+    "opcode": "0010011",
+    "funct3": "111",
+    "funct7": "0000000",
+    "format": "I"
+  },
+  "slli":{
+    "opcode": "0010011",
+    "funct3": "001",
+    "funct7": "0000000",
+    "format": "I"
+  },
+  "srli":{
+    "opcode": "0010011",
+    "funct3": "101",
+    "funct7": "0000000",
+    "format": "I"
+  },
+  "srai":{
+    "opcode": "0010011",
+    "funct3": "101",
+    "funct7": "0100000",
+    "format": "I"
+  },
+  "add":{
+    "opcode": "0110011",
+    "funct3": "000",
+    "funct7": "0000000",
+    "format": "R"
+  },
+  "sub":{
+    "opcode": "0110011",
+    "funct3": "000",
+    "funct7": "0100000",
+    "format": "R"
+  },
+  "sll":{
+    "opcode": "0110011",
+    "funct3": "001",
+    "funct7": "0000000",
+    "format": "R"
+  },
+  "slt":{
+    "opcode": "0110011",
+    "funct3": "010",
+    "funct7": "0000000",
+    "format": "R"
+  },
+  "sltu":{
+    "opcode": "0110011",
+    "funct3": "011",
+    "funct7": "0000000",
+    "format": "R"
+  },
+  "xor":{
+    "opcode": "0110011",
+    "funct3": "100",
+    "funct7": "0000000",
+    "format": "R"
+  },
+  "srl":{
+    "opcode": "0110011",
+    "funct3": "101",
+    "funct7": "0000000",
+    "format": "R"
+  },
+  "sra":{
+    "opcode": "0110011",
+    "funct3": "101",
+    "funct7": "0100000",
+    "format": "R"
+  },
+  "or":{
+    "opcode": "0110011",
+    "funct3": "110",
+    "funct7": "0000000",
+    "format": "R"
+  },
+  "and":{
+    "opcode": "0110011",
+    "funct3": "111",
+    "funct7": "0000000",
+    "format": "R"
+  },
+  "fence":{
+    "opcode": "0001111",
+    "funct3": "000",
+    "funct7": "0000000",
+    "format": "I"
+  },
+  "fence.i":{
+    "opcode": "0001111",
+    "funct3": "001",
+    "funct7": "0000000",
+    "format": "I"
+  },
+  "ecall":{
+    "opcode": "1110011",
+    "funct3": "000",
+    "funct7": "0000000",
+    "format": "I"
+  },
+  "ebreak":{
+    "opcode": "1110011",
+    "funct3": "000",
+    "funct7": "0000000",
+    "format": "I"
+  },
+  "csrrw":{
+    "opcode": "1110011",
+    "funct3": "001",
+    "funct7": "0000000",
+    "format": "I"
+  },
+  "csrrs":{
+    "opcode": "1110011",
+    "funct3": "010",
+    "funct7": "0000000",
+    "format": "I"
+  },
+  "csrrc":{
+    "opcode": "1110011",
+    "funct3": "011",
+    "funct7": "0000000",
+    "format": "I"
+  },
+  "csrrwi":{
+    "opcode": "1110011",
+    "funct3": "101",
+    "funct7": "0000000",
+    "format": "I"
+  },
+  "csrrsi":{
+    "opcode": "1110011",
+    "funct3": "110",
+    "funct7": "0000000",
+    "format": "I"
+  },
+  "csrrci":{
+    "opcode": "1110011",
+    "funct3": "111",
+    "funct7": "0000000",
+    "format": "I"
+  }
+}

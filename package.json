@@ -1,0 +1,47 @@
+{
+  "name": "staturn-v-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node swagger/swagger.js && node app.js",
+    "swagger-autogen": "node swagger/swagger.js",
+    "lint": "npx eslint core/",
+    "lint-fix": "npx eslint core/ --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduardoMichell/rv-api.git"
+  },
+  "keywords": [
+    "riscv"
+  ],
+  "author": "Eduardo Michel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eduardoMichell/rv-api/issues"
+  },
+  "homepage": "https://github.com/eduardoMichell/rv-api#readme",
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "eslint": "^8.21.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "swagger-autogen": "^2.11.0",
+    "swagger-ui-express": "^4.1.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  },
+  "engines": {
+    "node": "=16.16.0",
+    "npm": "=8.11.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}

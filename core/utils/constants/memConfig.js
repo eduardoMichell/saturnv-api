@@ -1,0 +1,4 @@
+module.exports = {
+  DATA_MEM_INIT: 268500992,
+  INST_MEM_INIT: 4194304,
+}

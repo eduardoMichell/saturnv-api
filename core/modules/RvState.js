@@ -1,6 +1,6 @@
 const Instruction = require('../utils/classes/Instruction')
 const RegFile = require('../utils/constants/regfile')
-const { shiftLeft, decimalToBinary, hexadecimalToBinary, getBinaryRange, binaryToDecimal} = require('../utils/utils')
+const { shiftLeft, decimalToBinary, hexadecimalToBinary, getBinaryRange, binaryToDecimal } = require('../utils/utils')
 module.exports = class RvState {
   constructor(code) {
     const { text, data } = code

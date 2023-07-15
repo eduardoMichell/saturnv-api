@@ -5,7 +5,7 @@ const RiscV = require('../modules/RISCV')
 router.get('/health-check', async (req, res) => {
   // #swagger.tags = ['Risc V']
   // #swagger.path = ['/rv/health-check']
-  // #swagger.description = 'health check'
+  // #swagger.description = 'Health check'
   try {
     res.status(201).json('health-check')
   } catch (err) {
@@ -39,7 +39,7 @@ router.post('/assemble', async (req, res) => {
 router.post('/run', async (req, res) => {
   // #swagger.tags = ['Risc V']
   // #swagger.path = ['/rv/run']
-  // #swagger.description = 'run one line'
+  // #swagger.description = 'Run one line'
   try {
     const { memories, code } = req.body
     console.log(memories,code)
@@ -67,13 +67,13 @@ router.post('/run', async (req, res) => {
 router.post('/dump', async (req, res) => {
   // #swagger.tags = ['Risc V']
   // #swagger.path = ['/rv/dump']
-  // #swagger.description = 'Assemble code'
+  // #swagger.description = 'Dump code'
   try {
 
-    const { asm, type } = req.body;
-    const { memories, code } = asm;
-    const riscv = new RiscV({ memories, code });
-    const data = riscv.dump(type);
+    const { asm, type } = req.body
+    const { memories, code } = asm
+    const riscv = new RiscV({ memories, code })
+    const data = riscv.dump(type)
     console.log(data)
     return res.status(201).json({ error: false, data, message: 'Success' })
   } catch (err) {

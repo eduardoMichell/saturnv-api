@@ -34,7 +34,7 @@ module.exports = class ALU {
       srlRes >>>= inputB
       aluResult = srlRes
       break
-      case Operations.SRA:
+    case Operations.SRA:
       aluResult = inputA >> inputB
       break
     case Operations.SLT:

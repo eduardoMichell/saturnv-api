@@ -25,7 +25,7 @@ module.exports = class Control {
     let memUsgn = 0
 
     const instructionFormat = this.#getInstructionFormat(opcode)
-    console.log(`instructionFormat`, instructionFormat)
+    console.log('instructionFormat', instructionFormat)
 
     // -------------------- ALU --------------------
     const shiftOp = getBinaryRange(1, 0, funct3) === '01' ? 1 : 0
@@ -44,7 +44,7 @@ module.exports = class Control {
 
     // -------------------- REGISTER BANK --------------------
     //   (instructionFormat !== InstructionFormat.IFENCE ||
-      regWrite = (instructionFormat !== InstructionFormat.S && instructionFormat !==InstructionFormat.IFENCE &&
+    regWrite = (instructionFormat !== InstructionFormat.S && instructionFormat !==InstructionFormat.IFENCE &&
         instructionFormat !== InstructionFormat.B && instructionFormat !== InstructionFormat.ULUI)
 
     // -------------------- BRANCHS --------------------

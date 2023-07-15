@@ -1,6 +1,8 @@
 # SATURN-V API
 
-<img src="imgs/logos/saturn.png" alt="saturnv-logo" width="350" height="200">
+<div style="text-align: center;">
+    <img src="imgs/logos/saturn.png" alt="saturnv-logo" width="350" height="200">
+</div>
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/eduardoMichell/saturnv-api?label=Repo%20Size)
 

@@ -16,6 +16,5 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 app.use('/rv', require('./core/controllers/RvController'))
 
 
-const PORT = process.env.PORT
-app.listen(PORT, () => console.log(`Server is running on port: ${PORT} - DOCS: http://localhost:${PORT}/api-docs/#/`))
+app.listen(3001, () => console.log(`Server is up`))
 

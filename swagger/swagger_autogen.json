@@ -16,7 +16,7 @@
         "tags": [
           "Risc V"
         ],
-        "description": "health check",
+        "description": "Health check",
         "parameters": [],
         "responses": {
           "201": {
@@ -66,7 +66,7 @@
         "tags": [
           "Risc V"
         ],
-        "description": "run one line",
+        "description": "Run one line",
         "parameters": [
           {
             "name": "body",
@@ -99,7 +99,7 @@
         "tags": [
           "Risc V"
         ],
-        "description": "Assemble code",
+        "description": "Dump code",
         "parameters": [
           {
             "name": "body",

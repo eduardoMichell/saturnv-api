@@ -16,5 +16,5 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 app.use('/rv', require('./core/controllers/RvController'))
 
 
-app.listen(3001, () => console.log(`Server is up`))
+app.listen(80, () => console.log(`Server is up`))
 

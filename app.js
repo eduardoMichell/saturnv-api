@@ -13,8 +13,8 @@ app.use(cors())
 app.use(express.json());
 app.use(bodyParser.json())
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
-app.use('/rv', require('./core/controllers/RvController'))
+app.use('/', require('./core/controllers/RvController'))
 
 
-app.listen(80, () => console.log(`Server is up`))
+app.listen(3001, () => console.log(`Server is up`))
 

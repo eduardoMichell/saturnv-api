@@ -56,7 +56,7 @@ function convertConfigToText(code, instMem, pc){
   let pcCount = Number.parseInt(pc)
 
   for (let i = 0; i < code.text.code.length; i++){
-    data.address.push(addHexZeros(Object.keys(instMem[pcCount])[0],10))
+    data.address.push(decimalToHex(pcCount))
     data.code.push(addHexZeros(binaryToHexadecimal(code.text.code[i]), 10))
     data.basic.push(code.text.basic[i])
     data.source.push(code.text.source[i])

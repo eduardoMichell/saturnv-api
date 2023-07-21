@@ -74,7 +74,6 @@ router.post('/dump', async (req, res) => {
     const { memories, code } = asm
     const riscv = new RiscV({ memories, code })
     const data = riscv.dump(type)
-    console.log(data)
     return res.status(201).json({ error: false, data, message: 'Success' })
   } catch (err) {
     console.log(err)

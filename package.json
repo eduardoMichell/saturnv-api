@@ -7,7 +7,8 @@
     "start": "node swagger/swagger.js && node app.js",
     "swagger-autogen": "node swagger/swagger.js",
     "lint": "npx eslint core/",
-    "lint-fix": "npx eslint core/ --fix"
+    "lint-fix": "npx eslint core/ --fix",
+    "lint-staged": "npx lint-staged"
   },
   "repository": {
     "type": "git",

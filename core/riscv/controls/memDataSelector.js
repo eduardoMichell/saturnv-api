@@ -1,20 +1,20 @@
 
 module.exports = (memRead,loadUpImm, jump, dataMemData, instImm, pcPlusFour ,aluResult) => {
-  let result
+  let result;
 
   switch (true) {
   case memRead:
-    result = dataMemData
-    break
+    result = dataMemData;
+    break;
   case loadUpImm:
-    result = instImm
-    break
+    result = instImm;
+    break;
   case jump:
-    result = pcPlusFour
-    break
+    result = pcPlusFour;
+    break;
   default:
-    result = aluResult
-    break
+    result = aluResult;
+    break;
   }
-  return result
+  return result;
 }

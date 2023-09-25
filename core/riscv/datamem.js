@@ -6,12 +6,12 @@ module.exports = class DataMem {
   }
   writeMemory(address, data, memWrite) {
     if (memWrite){
-      this.memory[address] = data
+      this.memory[address] = data;
     }
   }
   readMemory(address, rgData2, memRead, memBen, memUsgn) {
     if (memRead){
-      return  this.memory[binaryToDecimal(address)]
+      return  this.memory[binaryToDecimal(address)];
     }
   }
 
@@ -19,11 +19,11 @@ module.exports = class DataMem {
     let total = 0
     for (const dataI of data){
       for (let i = 0; i < dataI.basic.length; i++){
-        datamem[DATA_MEM_INIT + total*4] = dataI.basic[i]
-        total++
+        datamem[DATA_MEM_INIT + total*4] = dataI.basic[i];
+        total++;
       }
     }
-    return datamem
+    return datamem;
   }
 
 }

@@ -1,17 +1,17 @@
 module.exports = class PC {
 
   constructor(pc) {
-    this.pc = pc
+    this.pc = pc;
   }
   setPc(newPc){
-    this.pc = newPc
+    this.pc = newPc;
   }
 
   getPc(){
-    return this.pc
+    return this.pc;
   }
 
   plusFour(){
-    return this.pc + 4
+    return this.pc + 4;
   }
 }

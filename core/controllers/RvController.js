@@ -1,25 +1,21 @@
-const express = require('express')
-const router = express.Router()
-const RiscV = require('../modules/RISCV')
+const express = require('express');
+const router = express.Router();
+const RiscV = require('../modules/RISCV');
 
 router.get('/health-check', async (req, res) => {
   // #swagger.tags = ['Risc V']
-  // #swagger.path = ['/rv/health-check']
+  // #swagger.path = ['/health-check']
   // #swagger.description = 'Health check'
-  try {
-    res.status(201).json('health-check')
-  } catch (err) {
-    res.status(500).json({ message: err.message })
-  }
+  res.status(200).json({ status: 'Healthy' });
 })
 
-router.post('/assemble', async (req, res) => {
+router.post('/assemble-code', async (req, res) => {
   // #swagger.tags = ['Risc V']
-  // #swagger.path = ['/rv/assemble']
+  // #swagger.path = ['/assemble-code']
   // #swagger.description = 'Assemble code'
   try {
-    const { memories, code } = req.body
-    const riscv = new RiscV({ memories, code })
+    const { memories, code } = req.body;
+    const riscv = new RiscV({ memories, code });
     const result = {
       code: riscv.code,
       memories: {
@@ -29,22 +25,21 @@ router.post('/assemble', async (req, res) => {
         pc: riscv.pc.getPc()
       }
     }
-    return res.status(201).json({ error: false, data: result, message: 'Success' })
+    return res.status(201).json({ error: false, data: result, message: 'Success' });
   } catch (err) {
     console.log(err)
-    return res.json({ message: err, error: true, data: {} })
+    return res.status(500).json({ message: err, error: true, data: {} });
   }
 })
 
-router.post('/run', async (req, res) => {
+router.post('/run-one-step', async (req, res) => {
   // #swagger.tags = ['Risc V']
-  // #swagger.path = ['/rv/run']
+  // #swagger.path = ['/run-one-step']
   // #swagger.description = 'Run one line'
   try {
-    const { memories, code } = req.body
-    console.log(memories,code)
-    const riscv = new RiscV({ memories, code })
-    riscv.run()
+    const { memories, code } = req.body;
+    const riscv = new RiscV({ memories, code });
+    riscv.runOneStep();
     const result = {
       code: riscv.code,
       memories: {
@@ -54,32 +49,49 @@ router.post('/run', async (req, res) => {
         pc: riscv.pc.getPc()
       }
     }
-    console.log(result)
-    return res.status(201).json({ error: false, data: result, message: 'Success' })
+    return res.status(201).json({ error: false, data: result, message: 'Success' });
   } catch (err) {
-    console.log(err)
-    return res.json({ message: err, error: true, data: {} })
+    return res.status(500).json({ message: err, error: true, data: {} });
   }
 })
 
-
-
-router.post('/dump', async (req, res) => {
+router.post('/run-entire-program', async (req, res) => {
   // #swagger.tags = ['Risc V']
-  // #swagger.path = ['/rv/dump']
+  // #swagger.path = ['/run-entire-program']
+  // #swagger.description = 'Run entire program'
+  try {
+    const { memories, code } = req.body;
+    const riscv = new RiscV({ memories, code });
+    riscv.runEntireProgram();
+    const result = {
+      code: riscv.code,
+      memories: {
+        regFile: riscv.regFile.registers,
+        instMem: riscv.instMem.memory,
+        dataMem: riscv.dataMem.memory,
+        pc: riscv.pc.getPc()
+      }
+    }
+    return res.status(201).json({ error: false, data: result, message: 'Success' });
+  } catch (err) {
+    return res.status(500).json({ message: err, error: true, data: {} });
+  }
+})
+
+router.post('/dump-machine-code', async (req, res) => {
+  // #swagger.tags = ['Risc V']
+  // #swagger.path = ['/dump-machine-code']
   // #swagger.description = 'Dump code'
   try {
 
-    const { asm, type } = req.body
-    const { memories, code } = asm
-    const riscv = new RiscV({ memories, code })
-    const data = riscv.dump(type)
-    return res.status(201).json({ error: false, data, message: 'Success' })
+    const { asm, type } = req.body;
+    const { memories, code } = asm;
+    const riscv = new RiscV({ memories, code });
+    const data = riscv.dump(type);
+    return res.status(201).json({ error: false, data, message: 'Success' });
   } catch (err) {
-    console.log(err)
-    return res.json({ message: err, error: true, data: {} })
+    return res.status(500).json({ message: err, error: true, data: {} });
   }
 })
 
-
-module.exports = router
+module.exports = router;

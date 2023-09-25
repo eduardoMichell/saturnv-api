@@ -11,7 +11,7 @@
     "http"
   ],
   "paths": {
-    "/rv/health-check": {
+    "/health-check": {
       "get": {
         "tags": [
           "Risc V"
@@ -19,16 +19,13 @@
         "description": "Health check",
         "parameters": [],
         "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "500": {
-            "description": "Internal Server Error"
+          "200": {
+            "description": "OK"
           }
         }
       }
     },
-    "/rv/assemble": {
+    "/assemble-code": {
       "post": {
         "tags": [
           "Risc V"
@@ -52,16 +49,16 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
-          },
           "201": {
             "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
     },
-    "/rv/run": {
+    "/run-one-step": {
       "post": {
         "tags": [
           "Risc V"
@@ -85,16 +82,49 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
-          },
           "201": {
             "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
     },
-    "/rv/dump": {
+    "/run-entire-program": {
+      "post": {
+        "tags": [
+          "Risc V"
+        ],
+        "description": "Run entire program",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "memories": {
+                  "example": "any"
+                },
+                "code": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/dump-machine-code": {
       "post": {
         "tags": [
           "Risc V"
@@ -118,11 +148,11 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
-          },
           "201": {
             "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }

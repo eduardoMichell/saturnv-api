@@ -4,18 +4,18 @@ module.exports = class InstMem {
     this.memory = this.#setTextToInstMem(instMem, text)
   }
   #setTextToInstMem(instMem, text) {
-    const instMemInit = INST_MEM_INIT
-    const totalOfInstruction = text.basic.length
+    const instMemInit = INST_MEM_INIT;
+    const totalOfInstruction = text.basic.length;
     for (let i = 0; i < totalOfInstruction; i++) {
-      instMem[instMemInit + i*4].basic = text.basic[i]
-      instMem[instMemInit + i*4].code = text.code[i]
-      instMem[instMemInit + i*4].source = text.source[i]
+      instMem[instMemInit + i*4].basic = text.basic[i];
+      instMem[instMemInit + i*4].code = text.machineCode[i];
+      instMem[instMemInit + i*4].source = text.source[i];
     }
-    return instMem
+    return instMem;
   }
 
   readInstruction(address) {
-    return this.memory[address]
+    return this.memory[address];
   }
 
 }
